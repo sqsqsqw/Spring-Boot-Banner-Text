@@ -1,11 +1,9 @@
 # Spring-Boot-Banner-Text
  Change SpringBoot Project Easter egg
 
-[TOC]
-
 ## 这是啥？
 
-	下面这个表示对于使用过Springboot的Java开发者来说再熟悉不过了。
+	下面这个彩蛋表示对于使用过Springboot的Java开发者来说再熟悉不过了。
 ```
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -183,4 +181,4 @@ bannerMode为SpringApplication的属性，默认为Banner.Mode.CONSOLE。
 pringApplicationBannerPrinter类中的私有方法getBanner使用Banner接口的实现类SpringBootBanner对Banner进行输出。
 而getBanner方法中使用到的Banners是实现了Banner接口的将实现Banner接口的对象保存在ArrayList中的封装内部类。（禁止套娃）
 我们先来了解一下实现了Banner接口的类都有哪些
-![Banner接口的实现类]( )
+![Banner接口的实现类]( https://github.com/sqsqsqw/Spring-Boot-Banner-Text/blob/master/Banner%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB.jpg)
