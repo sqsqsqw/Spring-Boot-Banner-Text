@@ -212,7 +212,7 @@ pringApplicationBannerPrinter类中的私有方法getBanner使用Banner接口的
 来一张全家福。
 ![Banner接口的实现类]( https://github.com/sqsqsqw/Spring-Boot-Banner-Text/blob/master/BannerBanner接口的实现类.jpg)
 
-![Banner接口的实现类全家福]( https://github.com/sqsqsqw/Spring-Boot-Banner-Text/blob/master/Banner接口的实现类全家福jpg)
+![Banner接口的实现类全家福]( https://github.com/sqsqsqw/Spring-Boot-Banner-Text/blob/master/Banner接口的实现类全家福.jpg)
 
 Banners, ImageBanner, PrintedBanner, ResourceBanner, SpringBootBanner。
 其中，Banners类已经有所接触，而其他的类则是用于Banner输出的Banner实现类。
@@ -279,8 +279,13 @@ Banners, ImageBanner, PrintedBanner, ResourceBanner, SpringBootBanner。
   static final String[] IMAGE_EXTENSION = { "gif", "jpg", "png" };
 ```
 
-若在resources文件夹中找到至少一个名为banner的文本文档和图片文件，那么将会返回Banners类的对象并分别输出。
-若没有，则继续判断fallbackBanner是否为空。
+若在resources文件夹中找到至少一个名为banner的文本文档或图片文件，那么将会返回Banners类的对象并分别输出。
+若没有，则继续判断fallbackBanner是否为空。若不为空，则使用fallbackBanner，若为空，则使用SpringBootBanner类。
+fallbackBanner可以通过SpringApplicationBannerPrinter的构造函数进行赋值，而SpringApplication类的printBanner方法将this.banner作为参数传入。
+SpringApplication的banner默认为空NULL，但是可以通过setter进行赋值。
+则，SpringApplicationBannerPrinter.getBanner方法是选择对应的Banner实现类。
 
+Banner接口类有printBanner方法，所有实现了Banner接口的类都需要实现这个方法，则彩蛋就需要调用printBanner方法进行输出。而SpringBootBanner类是SpringBoot默认的Banner输出类。
 
-则，SpringApplicationBannerPrinter.getBanner方法是选择对应的Banner实现类
+## 总结
+SpringBoot默认有SpringBootBanner类可以进行默认输出，但可以通过在resources文件夹下创建文件名为banner的.txt/.jpg/.png/.gif文件对默认输出进行修改。突然发现可以输出gif这么好玩的事情，怎么能不尝试一下呢。
