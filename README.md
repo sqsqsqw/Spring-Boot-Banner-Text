@@ -15,6 +15,7 @@
  :: Spring Boot ::        (v2.1.3.RELEASE)
 ```
 将banner.txt放置在项目中的/src/main/resources目录下，即可将彩蛋更换至文本文档中写的文本。
+本repo是用来记录彩蛋是如何生成的，以及有什么好玩的骚操作。
 
 ## 深入♂了解
 
